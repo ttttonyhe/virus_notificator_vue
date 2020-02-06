@@ -448,9 +448,6 @@ import axios from "axios";
 import qs from "qs";
 export default {
   name: "Index",
-  props: {
-    msg: String
-  },
   data: () => ({
     show: false,
     value: "",
