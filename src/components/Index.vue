@@ -8,7 +8,7 @@
       </div>
       <zi-note>
         数据将实时同步并自
-        <zi-link href="https://ncov.dxy.cn/ncovh5/view/pneumonia" color>丁香园·丁香医生</zi-link> 获取
+        <zi-link href="https://ncov.dxy.cn/ncovh5/view/pneumonia" color>丁香园·丁香医生</zi-link>获取
       </zi-note>
       <div class="form">
         <div>
@@ -160,7 +160,7 @@
             <i class="ri-mail-fill icon"></i> 如何使用 Email 邮箱订阅疫情数据推送
           </h1>
           <p>你可以使用本页页面上方的邮箱输入框进行订阅，系统将自动检测邮箱的订阅状态。使用邮件订阅服务的已订阅用户将可以对订阅服务进行个性化管理，订阅者能够随时修改:</p>
-          <p>
+          <p class="tag">
             <zi-tag>订阅邮箱地址</zi-tag>
             <zi-tag>订阅城市</zi-tag>
             <zi-tag>订阅省份</zi-tag>
@@ -179,7 +179,7 @@
           </h1>
           <p>你可以使用本页页面上方的 RSS 链接进行订阅，系统将自动生成包含全国数据、全国全省数据、全国全市数据内容段。订阅方法可见:</p>
           <p>
-            <zi-tag>
+            <zi-tag class="link">
               <zi-link
                 href="http://jingyan.baidu.com/article/e73e26c0c73e1f24adb6a70f.html"
               >http://jingyan.baidu.com/article/e73e26c0c73e1f24adb6a70f.html</zi-link>
@@ -188,6 +188,22 @@
           <p>
             我们的 RSS 订阅源每
             <b>5:00</b> 分钟更新一次，你可以随时在你使用的订阅端取消订阅。
+          </p>
+        </zi-fieldset>
+        <zi-fieldset>
+          <h1>
+            <i class="ri-code-box-fill icon"></i> 全国疫情数据 API 接口文档 <zi-tag type="success">服务状态 : 正常</zi-tag>
+          </h1>
+          <p>你可以使用以下接口进行查询，支持跨域请求，系统将自动生成 Json 数据并返回。API 接口列表和使用方法如下:</p>
+          <p>
+            <zi-tag class="link">全国全省全市数据: https://node.ouorz.com/api/all</zi-tag>
+            <zi-tag class="link">全省数据: https://node.ouorz.com/api/province/:province</zi-tag>
+            <zi-tag class="link">全市数据: https://node.ouorz.com/api/city/:city</zi-tag>
+          </p>
+          <p>API 请求样例，注意城市名不带「市」：</p>
+          <p>
+            <zi-tag class="link">四川省数据: https://node.ouorz.com/api/province/四川省</zi-tag><br/>
+            <zi-tag class="link">成都市数据: https://node.ouorz.com/api/city/成都</zi-tag>
           </p>
         </zi-fieldset>
       </div>
@@ -216,6 +232,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .zi-toast {
+    width: 36.5vh !important;
+  }
   .container {
     width: 100% !important;
     padding: 0px !important;
@@ -250,6 +269,9 @@ body {
         }
         p {
           font-size: 0.9rem !important;
+        }
+        .tag {
+          line-height: 2.4;
         }
       }
     }
@@ -332,6 +354,11 @@ body {
         &:last-child {
           margin-right: 0px;
         }
+      }
+      .link {
+        max-width: 85%;
+        overflow: hidden;
+        white-space: nowrap;
       }
     }
     .zi-fieldset-footer {
