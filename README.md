@@ -14,6 +14,7 @@ A 2019-nCov Virus Stats Notification Platform
 <br/>
 
 ### Front-End 前端
+[https://github.com/HelipengTony/virus_notificator_vue](https://github.com/HelipengTony/virus_notificator_vue)
 + Vue-Cli 3.x
 + Zeit-UI
 + RemixIcon
@@ -21,6 +22,7 @@ A 2019-nCov Virus Stats Notification Platform
 <br/>
 
 ### Back-End 后端
+[https://github.com/HelipengTony/virus_notificator_node](https://github.com/HelipengTony/virus_notificator_node)
 + Node.js v6.0.0+
 + MongoDB
 
