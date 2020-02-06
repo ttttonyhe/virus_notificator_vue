@@ -113,14 +113,16 @@
         <div class="dialog-section">
           <zi-description title="退出每日疫情数据推送订阅" content="退出订阅" />
           <div class="dialog-input">
-            <zi-button
-              @click="unsubscribeEmail()"
-              :loading="editLoading.unsubscribe"
-              class="edit-button-2"
-              type="danger"
-              size="medium"
-              auto
-            >确认取消订阅</zi-button>
+            <zi-tooltip content="你将需要重新输入邮箱地址以再次订阅" placement="top">
+              <zi-button
+                @click="unsubscribeEmail()"
+                :loading="editLoading.unsubscribe"
+                class="edit-button-2"
+                type="danger"
+                size="medium"
+                auto
+              >退出邮件订阅</zi-button>
+            </zi-tooltip>
           </div>
         </div>
       </zi-dialog>
@@ -192,7 +194,8 @@
         </zi-fieldset>
         <zi-fieldset>
           <h1>
-            <i class="ri-code-box-fill icon"></i> 全国疫情数据 API 接口文档 <zi-tag type="success">服务状态 : 正常</zi-tag>
+            <i class="ri-code-box-fill icon"></i> 全国疫情数据 API 接口文档
+            <zi-tag type="success">服务状态 : 正常</zi-tag>
           </h1>
           <p>你可以使用以下接口进行查询，支持跨域请求，系统将自动生成 Json 数据并返回。API 接口列表和使用方法如下:</p>
           <p>
@@ -202,7 +205,8 @@
           </p>
           <p>API 请求样例，注意城市名不带「市」：</p>
           <p>
-            <zi-tag class="link">四川省数据: https://node.ouorz.com/api/province/四川省</zi-tag><br/>
+            <zi-tag class="link">四川省数据: https://node.ouorz.com/api/province/四川省</zi-tag>
+            <br />
             <zi-tag class="link">成都市数据: https://node.ouorz.com/api/city/成都</zi-tag>
           </p>
         </zi-fieldset>
