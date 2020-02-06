@@ -8,7 +8,7 @@
       </div>
       <zi-note>
         数据将实时同步并自
-        <zi-link href="https://ncov.dxy.cn/ncovh5/view/pneumonia" color>丁香园·丁香医生</zi-link>获取
+        <zi-link href="https://ncov.dxy.cn/ncovh5/view/pneumonia" color>丁香园·丁香医生</zi-link> 获取
       </zi-note>
       <div class="form">
         <div>
@@ -214,7 +214,9 @@
 
       <div class="copy">
         <p>
-          Made with
+          <zi-link href="https://github.com/HelipengTony/virus_notificator_vue">
+            <i class="ri-github-fill icon git"></i> Open-Source
+          </zi-link>&nbsp;|&nbsp;Made with
           <i class="ri-heart-2-fill icon"></i> by
           <zi-link href="https://www.ouorz.com">TonyHe</zi-link>
         </p>
@@ -376,6 +378,9 @@ body {
     p {
       i {
         color: #e74b3c;
+      }
+      .git {
+        color: #333 !important;
       }
     }
   }
