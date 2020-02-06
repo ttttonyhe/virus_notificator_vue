@@ -1,6 +1,3 @@
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 # Virus Notificator
 A 2019-nCov Virus Stats Notification Platform
 
