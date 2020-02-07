@@ -7,8 +7,8 @@
         <p>使用邮箱或 RSS 订阅 2019-nCov 疫情数据每日推送</p>
       </div>
       <zi-note>
-        数据将实时同步并自
-        <zi-link href="https://ncov.dxy.cn/ncovh5/view/pneumonia" color>丁香园·丁香医生</zi-link> 获取
+        数据将实时同步并自&nbsp;
+        <zi-link href="https://ncov.dxy.cn/ncovh5/view/pneumonia" color>丁香园·丁香医生</zi-link>&nbsp;获取
       </zi-note>
       <div class="form">
         <div>
@@ -18,6 +18,7 @@
                 prefix-label="Email"
                 class="email"
                 v-model="emailAddress"
+                @keyup.enter.native="verifyMailExist()"
                 type="email"
                 placeholder="example@email.com"
                 autofocus
@@ -31,7 +32,7 @@
                 @click="verifyMailExist()"
                 :loading="emailLoading"
               >
-                <i class="ri-mail-send-line icon"></i> 订阅 / 管理
+                <i class="ri-mail-send-line icon"></i> 订阅&nbsp;/&nbsp;管理
               </zi-button>
             </zi-col>
           </zi-row>
@@ -52,7 +53,13 @@
           <div class="dialog-input">
             <zi-row gutter="15">
               <zi-col span="16">
-                <zi-input size="medium" class="dialog-email" v-model="userData.email" type="email"></zi-input>
+                <zi-input
+                  size="medium"
+                  class="dialog-email"
+                  @keyup.enter.native="editEmail()"
+                  v-model="userData.email"
+                  type="email"
+                ></zi-input>
               </zi-col>
               <zi-col span="8">
                 <zi-button
@@ -129,8 +136,12 @@
       <!-- 管理订阅 -->
       <zi-dialog v-model="showDialog.subscribe" title="订阅成功" done="完成" cancel="取消">
         <div class="subscribe-success">
-          <p>你已经成功订阅疫情数据每日推送</p>
+          <p>你已经成功订阅疫情数据每日推送，请完善订阅信息</p>
           <p>你将在每天 23:00 收到你所选择的省份/城市最新数据与全国状况统计</p>
+          <p>
+            我们将使用&nbsp;<b>noreply@eugrade.com</b>&nbsp;进行邮件推送
+          </p>
+          <p>请尝试加入邮箱白名单以确保订阅正常</p>
         </div>
         <zi-row gutter="15">
           <zi-col span="15">
@@ -159,7 +170,7 @@
       <div class="qanda">
         <zi-fieldset>
           <h1>
-            <i class="ri-mail-fill icon"></i> 如何使用 Email 邮箱订阅疫情数据推送
+            <i class="ri-mail-fill icon"></i>&nbsp;如何使用 Email 邮箱订阅疫情数据推送
           </h1>
           <p>你可以使用本页页面上方的邮箱输入框进行订阅，系统将自动检测邮箱的订阅状态。使用邮件订阅服务的已订阅用户将可以对订阅服务进行个性化管理，订阅者能够随时修改:</p>
           <p class="tag">
@@ -177,7 +188,7 @@
         </zi-fieldset>
         <zi-fieldset>
           <h1>
-            <i class="ri-rss-fill icon"></i> 如何使用 RSS 地址订阅疫情数据推送
+            <i class="ri-rss-fill icon"></i>&nbsp;如何使用 RSS 地址订阅疫情数据推送
           </h1>
           <p>你可以使用本页页面上方的 RSS 链接进行订阅，系统将自动生成包含全国数据、全国全省数据、全国全市数据内容段。订阅方法可见:</p>
           <p>
@@ -194,8 +205,8 @@
         </zi-fieldset>
         <zi-fieldset>
           <h1>
-            <i class="ri-code-box-fill icon"></i> 全国疫情数据 API 接口文档
-            <zi-tag type="success">服务状态 : 正常</zi-tag>
+            <i class="ri-code-box-fill icon"></i>&nbsp;全国疫情数据 API 接口文档
+            <zi-tag type="success">服务状态&nbsp;:&nbsp;正常</zi-tag>
           </h1>
           <p>你可以使用以下接口进行查询，支持跨域请求，系统将自动生成 Json 数据并返回。API 接口列表和使用方法如下:</p>
           <p>
@@ -586,7 +597,8 @@ export default {
               type: "warning",
               text: res.data.msg
             });
-            window.location.reload();
+            //订阅失败，复原邮箱地址
+            this.emailAddress = "";
           }
         })
         .catch(() => {
