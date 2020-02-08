@@ -12,7 +12,7 @@ A 2019-nCov Virus Stats Notification Platform
 
 ### Front-End 前端
 [https://github.com/HelipengTony/virus_notificator_vue](https://github.com/HelipengTony/virus_notificator_vue)
-+ Vue-Cli 3.x
++ Vue-Cli 4
 + Zeit-UI
 + RemixIcon
 
