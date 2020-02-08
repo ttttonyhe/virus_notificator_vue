@@ -1,7 +1,10 @@
 
 <template>
-  <div class="container" v-show="show">
-    <div class="wap">
+  <div class="container">
+    <div v-if="!show">
+      <vue-article-skeleton></vue-article-skeleton>
+    </div>
+    <div class="wap" v-else>
       <div class="title">
         <h1>新型冠状病毒疫情数据订阅</h1>
         <p>使用邮箱或 RSS 订阅 2019-nCov 疫情数据每日推送</p>
@@ -139,7 +142,8 @@
           <p>你已经成功订阅疫情数据每日推送，请完善订阅信息</p>
           <p>你将在每天 23:00 收到你所选择的省份/城市最新数据与全国状况统计</p>
           <p>
-            我们将使用&nbsp;<b>noreply@eugrade.com</b>&nbsp;进行邮件推送
+            我们将使用&nbsp;
+            <b>noreply@eugrade.com</b>&nbsp;进行邮件推送
           </p>
           <p>请尝试加入邮箱白名单以确保订阅正常</p>
         </div>
@@ -246,6 +250,11 @@ body {
 .zi-toast .message {
   font-weight: 600;
   font-size: 1rem;
+}
+.skeleton{
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  padding: 0px !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -457,6 +466,7 @@ body {
 <script>
 import axios from "axios";
 import qs from "qs";
+
 export default {
   name: "Index",
   data: () => ({
