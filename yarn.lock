@@ -1264,6 +1264,11 @@
   resolved "https://registry.npm.taobao.org/@zeit-ui/typographic/download/@zeit-ui/typographic-0.2.6.tgz#4011532ca3eb8ac9ad726466955cf1a53921eba4"
   integrity sha1-QBFTLKPrismtcmRmlVzxpTkh66Q=
 
+"@zeit-ui/vue-icons@^2.0.1-canary.6":
+  version "2.0.1-canary.6"
+  resolved "https://registry.npm.taobao.org/@zeit-ui/vue-icons/download/@zeit-ui/vue-icons-2.0.1-canary.6.tgz#63f9e53d9402474172004e7c1f312cf2a9b4285a"
+  integrity sha1-Y/nlPZQCR0FyAE58HzEs8qm0KFo=
+
 "@zeit-ui/vue@^2.0.1":
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/@zeit-ui/vue/download/@zeit-ui/vue-2.0.1.tgz#b0ee57e4620d317cea22c045ee2eb7d94713d57a"

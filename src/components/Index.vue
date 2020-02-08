@@ -1,7 +1,7 @@
 
 <template>
   <div class="container">
-    <div v-if="!show">
+    <div v-if="show">
       <vue-article-skeleton></vue-article-skeleton>
     </div>
     <div class="wap" v-else>
