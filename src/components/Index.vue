@@ -1,7 +1,7 @@
 
 <template>
   <div class="container">
-    <div v-if="show">
+    <div v-if="!show">
       <vue-article-skeleton></vue-article-skeleton>
     </div>
     <div class="wap" v-else>
@@ -140,7 +140,7 @@
       <zi-dialog v-model="showDialog.subscribe" title="订阅成功" done="完成" cancel="取消">
         <div class="subscribe-success">
           <p>你已经成功订阅疫情数据每日推送，请完善订阅信息</p>
-          <p>你将在每天 23:00 收到你所选择的省份/城市最新数据与全国状况统计</p>
+          <p>你将在每天 11:00 收到你所选择的省份/城市最新数据与全国状况统计</p>
           <p>
             我们将使用&nbsp;
             <b>noreply@eugrade.com</b>&nbsp;进行邮件推送
@@ -185,7 +185,7 @@
           </p>
           <p>
             成为订阅者后你将在每天的
-            <b>23:00</b> 收到一份包含
+            <b>11:00</b> 收到一份包含
             <b>全国数据</b>、
             <b>省份/城市</b>数据的邮件推送。你也可以使用订阅服务管理随时退出取消邮件订阅。
           </p>
