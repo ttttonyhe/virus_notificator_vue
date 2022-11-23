@@ -1,5 +1,5 @@
 # Virus Notificator
-A 2019-nCov Virus Stats Notification Platform
+A COVID-19 Virus Stats Notification Platform
 
 <br/>
 

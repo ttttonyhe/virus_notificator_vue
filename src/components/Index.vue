@@ -7,7 +7,7 @@
     <div class="wap" v-else>
       <div class="title">
         <h1>新型冠状病毒疫情数据订阅</h1>
-        <p>使用邮箱或 RSS 订阅 2019-nCov 疫情数据每日推送</p>
+        <p>使用邮箱或 RSS 订阅 COVID-19 疫情数据每日推送</p>
       </div>
       <zi-note>
         数据将实时同步并自&nbsp;
