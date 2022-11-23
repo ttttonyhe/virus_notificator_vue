@@ -470,8 +470,7 @@ import qs from "qs";
 export default {
   name: "Index",
   data: () => ({
-    // show: false,
-    show: true,
+    show: false,
     value: "",
     emailAddress: "",
     emailLoading: false,
