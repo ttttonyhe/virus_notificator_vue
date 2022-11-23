@@ -44,7 +44,7 @@
       <div class="rss">
         <zi-card>
           <i class="ri-rss-fill icon"></i>&nbsp;&nbsp;&nbsp;RSS 订阅地址：
-          <zi-link href="https://node.ouorz.com/rss" color>https://node.ouorz.com/rss</zi-link>
+          <zi-link href="https://virus-notificator-node.onrender.com/rss" color>https://virus-notificator-node.onrender.com/rss</zi-link>
         </zi-card>
       </div>
 
@@ -214,15 +214,15 @@
           </h1>
           <p>你可以使用以下接口进行查询，支持跨域请求，系统将自动生成 Json 数据并返回。API 接口列表和使用方法如下:</p>
           <p>
-            <zi-tag class="link">全国全省全市数据: https://node.ouorz.com/api/all</zi-tag>
-            <zi-tag class="link">全省数据: https://node.ouorz.com/api/province/:province</zi-tag>
-            <zi-tag class="link">全市数据: https://node.ouorz.com/api/city/:city</zi-tag>
+            <zi-tag class="link">全国全省全市数据: https://virus-notificator-node.onrender.com/api/all</zi-tag>
+            <zi-tag class="link">全省数据: https://virus-notificator-node.onrender.com/api/province/:province</zi-tag>
+            <zi-tag class="link">全市数据: https://virus-notificator-node.onrender.com/api/city/:city</zi-tag>
           </p>
           <p>API 请求样例，注意城市名不带「市」：</p>
           <p>
-            <zi-tag class="link">四川省数据: https://node.ouorz.com/api/province/四川省</zi-tag>
+            <zi-tag class="link">四川省数据: https://virus-notificator-node.onrender.com/api/province/四川省</zi-tag>
             <br />
-            <zi-tag class="link">成都市数据: https://node.ouorz.com/api/city/成都</zi-tag>
+            <zi-tag class="link">成都市数据: https://virus-notificator-node.onrender.com/api/city/成都</zi-tag>
           </p>
         </zi-fieldset>
       </div>
@@ -523,7 +523,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://node.ouorz.com/api/all")
+      .get("https://virus-notificator-node.onrender.com/api/all")
       .then(res => {
         if (res.data.status) {
           this.showData.country = {
@@ -547,7 +547,7 @@ export default {
     verifyMailExist() {
       this.emailLoading = true;
       axios
-        .get("https://node.ouorz.com/verify/mail/exist/" + this.emailAddress)
+        .get("https://virus-notificator-node.onrender.com/verify/mail/exist/" + this.emailAddress)
         .then(res => {
           setTimeout(() => {
             if (res.data.status) {
@@ -590,7 +590,7 @@ export default {
     subscribeEmail() {
       axios
         .post(
-          "https://node.ouorz.com/subscribe/mail",
+          "https://virus-notificator-node.onrender.com/subscribe/mail",
           qs.stringify({
             email: this.emailAddress
           })
@@ -623,7 +623,7 @@ export default {
       this.editLoading.unsubscribe = true;
       axios
         .post(
-          "https://node.ouorz.com/unsubscribe/mail",
+          "https://virus-notificator-node.onrender.com/unsubscribe/mail",
           qs.stringify({
             email: this.userData.email
           })
@@ -663,7 +663,7 @@ export default {
       this.editLoading.email = true;
       axios
         .post(
-          "https://node.ouorz.com/subscribe/mail/edit",
+          "https://virus-notificator-node.onrender.com/subscribe/mail/edit",
           qs.stringify({
             original_email: this.userData.first.email,
             current_email: this.userData.email
@@ -698,7 +698,7 @@ export default {
       this.editLoading.info = true;
       axios
         .post(
-          "https://node.ouorz.com/subscribe/mail/edit/info",
+          "https://virus-notificator-node.onrender.com/subscribe/mail/edit/info",
           qs.stringify({
             email: this.userData.first.email,
             province: this.userData.province,
